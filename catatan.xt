@@ -1,0 +1,9 @@
+sequelize init 
+npx sequelize db:create 
+npx sequelize model:generate --name Users --attributes nama:string,email:string,password:string,role:string
+npx sequelize model:generate --name Members --attributes user_id:integer,nomor_nrp:string,nama:sring,nomor_telepone:string,deskripsi:string,divison:string
+npx sequelize model:generate --name Divisi --attributes kode_divisi:string,nama_divisi:string,alamat_kantor:string
+npx sequelize model:generate --name Histori_pangkat --attributes nama_pangkat:string,status:string,tanggal_mulai:date,masa_jabatan:integer,tanggal_akhir:date,members_id:integer
+npx sequelize model:generate --name Surat_keterangan_tugas --attributes members_id:integer,nomor_sk:string,tanggal_sk:date,deskripsi:string,softfile:string
+npx sequelize model:generate --name Surat --attributes penerima_id:integer,pengirim_id:integer,kode_surat:string,tanggal:date,asal_surat:string,jenis_surat:string,softfile:string,tipe:enum
+npx sequelize db:migratesequ
